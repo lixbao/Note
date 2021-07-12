@@ -18,7 +18,7 @@
 + A9：2017 使用含有已知漏洞的组件
 + A10：2017 不足的日志记录和监控
 
-![image-20210701132309569](OWASP.assets/image-20210701132309569.png)
+![image-20210701132309569](https://raw.githubusercontent.com/lixbao/PicGo/main/img/20210712225647.png)
 
 # A1：2017 注入
 
@@ -172,7 +172,7 @@ http://10.10.10.30/xml/example1.php?xml=<!DOCTYPE foo [<!ENTITY xxebbsjl SYSTEM 
 
 一个跨站请求伪造攻击迫使登陆用户的浏览器将伪造的HTTP请求（包括该用户的会话cookie和其他认证信息）发送到一个存在漏洞的web应用程序。这就允许了攻击者迫使用户浏览器向存在漏洞的应用程序发送请求，而这些请求会被应用程序认为是用户的合法操作
 
-![image-20210702130337914](OWASP.assets/image-20210702130337914.png)
+![image-20210702130337914](https://raw.githubusercontent.com/lixbao/PicGo/main/img/20210712225635.png)
 
 # A8：2017 不安全的反序列化
 
@@ -210,9 +210,9 @@ $test_unser unser= unserialize ($test);
 </html>
 ```
 
-![image-20210702131411698](OWASP.assets/image-20210702131411698.png)
+![image-20210702131411698](https://raw.githubusercontent.com/lixbao/PicGo/main/img/20210712225629.png)
 
-![image-20210702131432021](OWASP.assets/image-20210702131432021.png)
+![image-20210702131432021](https://raw.githubusercontent.com/lixbao/PicGo/main/img/20210712225624.png)
 
 # A9：2017 使用含有已知漏洞的组件
 
@@ -229,9 +229,9 @@ $test_unser unser= unserialize ($test);
 
 Eg：某SCADA系统使用含有已知漏洞的Strusts组件可执行任意命令
 
-![image-20210702132004094](OWASP.assets/image-20210702132004094.png)
+![image-20210702132004094](https://raw.githubusercontent.com/lixbao/PicGo/main/img/20210712225617.png)
 
-![image-20210702132013788](OWASP.assets/image-20210702132013788.png)
+![image-20210702132013788](https://raw.githubusercontent.com/lixbao/PicGo/main/img/20210712225612.png)
 
 # A10：不足的日志记录和监控
 
