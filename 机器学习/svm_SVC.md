@@ -132,9 +132,24 @@ sklearn.svm.SVC(
 
 示例代码
 
+```python
+from sklearn.svm import SVC
+import numpy as np
+X = np.array([[-1, -1], [-2, -1], [1, 1], [2, 1]])  # 特征样本
+y = np.array([1, 1, 2, 2])  # 分类标记
+clf = SVC(kernel='sigmoid')  # 线性核函数
+clf.fit(X, y)  # 训练模型，自动分类
+
+print(clf.fit(X, y))  # svc训练函数参数
+print(clf.predict([[-0.8, -1]]))  # 测试，新样本分类
+print(clf.support_vectors_)  # 支持向量点 
+print(clf.support_)  # 支持向量点的索引 
+print(clf.n_support_)  # 每个class有几个支持向量点 
+```
 
 
 
+10重交叉验证
 
 ```python
 start = time.time()
