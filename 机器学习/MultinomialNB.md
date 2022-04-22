@@ -24,15 +24,23 @@ sklearn.naive_bayes.**MultinomialNB(alpha=1.0, fit_prior=True, class_prior=None)
 
 参数说明：
 
-- **alpha**：浮点型，可选项，默认1.0，添加拉普拉修/Lidstone平滑参数。当α=1时，称作Laplace平滑，当0<α<1时，称作Lidstone平滑，α=0时不做平滑。
-- **fit_prior**：布尔型，可选项，默认True，表示是否学习先验概率，参数为False表示所有类标记具有相同的先验概率
-- **class_prior**：类似数组，数组大小为(n_classes,)，默认None，类的先验概率
+- **alpha**：浮点型，可选项，默认1.0，添加拉普拉修/Lidstone平滑参数。当α=1时，称作Laplace平滑，当0<α<1时，称作Lidstone平滑，α=0时不做平滑。设置得越大，精确性会越低。
+- **fit_prior**：布尔型，可选项，默认True，表示是否学习先验概率，参数为False表示所有类标记具有相同的先验概率即认为每个标签类出现的概率是1/总类别数。
+- **class_prior**：类似数组，数组大小为(n_classes,)，默认None，类的先验概率。如果没有给出具体的先验概率则自动根据数据来进行计算。
 
-| **class_prior**  | fit_prior  |         **最终先验概率**          |
-| :--------------: | :--------: | :-------------------------------: |
-| 指定类的先验概率 | True/False |  $P\big(y_k\big)=class$_$prior$   |
-|       None       |   False    |   $P\big(y_k\big)=\frac{1}{k}$    |
-|       None       |    True    | $P\big(y_k\big)=\frac{N_{yk}}{k}$ |
+| **class_prior**  | fit_prior  |   class_log_prior_   |
+| :--------------: | :--------: | :------------------: |
+| 指定类的先验概率 | True/False | $ln(class$_$prior)$  |
+|       None       |   False    |   $ln\frac{1}{k}$    |
+|       None       |    True    | $ln\frac{N_{yk}}{N}$ |
+
+|   class_prior    | fit_prior |         **最终先验概率**          |
+| :--------------: | :-------: | :-------------------------------: |
+| 指定类的先验概率 |   True    |  $P\big(y_k\big)=class$_$prior$   |
+|      无意义      |   False   |   $P\big(y_k\big)=\frac{1}{k}$    |
+|       None       |   True    | $P\big(y_k\big)=\frac{N_{yk}}{N}$ |
+
+**N**是总的**样本**个数，**k**是总的**类别**个数，**Nyk**是**类别为yk的样本**个数，**α**是**平滑值**
 
 
 
